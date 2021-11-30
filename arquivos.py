@@ -26,18 +26,7 @@ except:
 finally:
 
     alice_so_letras = ''.join(re.findall('[a-zA-Z]', f.read())).lower()
-    frequencia_letras = dict()
-
-    for x in alice_so_letras:
-
-        if x in frequencia_letras.keys():
-
-            frequencia_letras[x] += 1
-        else:
-            frequencia_letras[x] = 1
+    f.close()
+    frequencia_letras = {x:alice_so_letras.count(x) for x in alice_so_letras}
     
     print(frequencia_letras)
-
-    f.close()
-
-    
